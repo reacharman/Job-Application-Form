@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Metamorphous&display=swap');
+
+:root {
+  --bg-primary: #f2e8c9;
+  --bg-secondary: #d4c39c;
+  --text-primary: #3c2a1e;
+  --text-secondary: #5e4b3b;
+  --accent: #8b4513;
+  --accent-hover: #a0522d;
+  --border: #704214;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Metamorphous', cursive;
+  line-height: 1.6;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c39c' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+/* Navbar related css */
+#links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 3px solid var(--border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#links > div {
+  display: flex;
+  list-style: none;
+}
+
+#links a {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-family: 'MedievalSharp', cursive;
+  transition: color 0.3s ease;
+}
+
+#links a:hover {
+  color: var(--accent-hover);
+}
+
+/* Table styles */
+table {
+  width: 70%;
+  margin: 100px auto 50px;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+tr > th {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.1);
+}
+
+/* Decorative elements */
+body::before,
+body::after {
+  content: '☩';
+  position: fixed;
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+body::before {
+  top: 20px;
+  left: 20px;
+}
+
+body::after {
+  content: '❧';
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Bookmark button styles */
+.bookmarkBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1rem;
+  color: var(--bg-primary);
+  background-color: var(--accent);
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bookmarkBtn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  table {
+    width: 90%;
+  }
+  
+  #links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #links a {
+    margin: 0.5rem 0;
+  }
+
+  .bookmarkBtn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
