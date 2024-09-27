@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Metamorphous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-  --bg-primary: #f2e8c9;
-  --bg-secondary: #d4c39c;
-  --text-primary: #3c2a1e;
-  --text-secondary: #5e4b3b;
-  --accent: #8b4513;
-  --accent-hover: #a0522d;
-  --border: #704214;
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent: #3498db;
+  --accent-hover: #2980b9;
+  --success: #2ecc71;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --border: #333333;
 }
 
 * {
@@ -19,135 +22,159 @@
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Metamorphous', cursive;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c39c' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
+  font-weight: 300;
 }
 
-/* Navbar related css */
 #links {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-evenly;
-  padding: 1rem;
-  background-color: var(--bg-secondary);
-  border-bottom: 3px solid var(--border);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
 
 #links > div {
   display: flex;
   list-style: none;
+  gap: 2rem;
 }
 
 #links a {
   text-decoration: none;
-  color: var(--accent);
-  font-size: 1.8rem;
-  font-family: 'MedievalSharp', cursive;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
 #links a:hover {
-  color: var(--accent-hover);
+  color: var(--accent);
 }
 
-/* Table styles */
 table {
-  width: 70%;
-  margin: 100px auto 50px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 120px auto 50px;
   background-color: var(--bg-secondary);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
-  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-  padding: 15px;
+  padding: 1rem;
   text-align: left;
-  border: 1px solid var(--border);
 }
 
 tr > th {
-  background-color: var(--accent);
-  color: var(--bg-primary);
-  font-family: 'MedievalSharp', cursive;
-  font-size: 1.2rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 0.8rem;
 }
 
 tr:nth-child(even) {
-  background-color: rgba(139, 69, 19, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Decorative elements */
-body::before,
-body::after {
-  content: '☩';
-  position: fixed;
-  font-size: 3rem;
-  color: var(--accent);
-  opacity: 0.5;
-  z-index: -1;
-}
-
-body::before {
-  top: 20px;
-  left: 20px;
-}
-
-body::after {
-  content: '❧';
-  bottom: 20px;
-  right: 20px;
-}
-
-/* Bookmark button styles */
 .bookmarkBtn {
   display: inline-block;
-  padding: 10px 20px;
-  font-family: 'MedievalSharp', cursive;
-  font-size: 1rem;
-  color: var(--bg-primary);
+  padding: 0.5rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
   background-color: var(--accent);
-  border: 2px solid var(--border);
-  border-radius: 5px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .bookmarkBtn:hover {
   background-color: var(--accent-hover);
+  transform: translateY(-2px);
 }
 
-/* Responsive design */
+.premium-badge {
+  display: inline-block;
+  background-color: var(--success);
+  color: var(--text-primary);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-active {
+  background-color: var(--success);
+  color: var(--text-primary);
+}
+
+.status-pending {
+  background-color: var(--warning);
+  color: var(--bg-primary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+tr {
+  animation: fadeIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+tr:nth-child(1) { animation-delay: 0.1s; }
+tr:nth-child(2) { animation-delay: 0.2s; }
+tr:nth-child(3) { animation-delay: 0.3s; }
+
 @media (max-width: 768px) {
-  table {
-    width: 90%;
-  }
-  
   #links {
     flex-direction: column;
-    align-items: center;
+    padding: 1rem;
   }
   
-  #links a {
-    margin: 0.5rem 0;
+  #links > div {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  table {
+    width: 95%;
+  }
+
+  th, td {
+    padding: 0.75rem 0.5rem;
   }
 
   .bookmarkBtn {
-    font-size: 0.9rem;
-    padding: 8px 16px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 }
