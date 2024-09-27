@@ -13,7 +13,7 @@ form.addEventListener('submit', function(event) {
 
     localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs))
 
-    alert('Application submitted successfully!')
+    alert('Application Submitted!')
 
     form.reset()
 })
